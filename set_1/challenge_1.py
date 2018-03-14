@@ -4,15 +4,20 @@ import binascii
 
 string = '49276d206b696c6c696e6720796f757220627261696e206c696b65206120706f69736f6e6f7573206d757368726f6f6d'
 
-def convert_to_raw_bytes(input):
-	"""Hex decodes a string. This is no longer actually required in Python3 when
-	converting to Base64"""
-	return binascii.unhexlify(input)
+
+def convert_to_raw_bytes(string_input):
+	"""Hex decodes a string."""
+	return binascii.unhexlify(string_input)
+
+
+def convert_to_hex(string_input):
+	"""Hex encodes a string"""
+	return binascii.hexlify(string_input)
 
 
 def convert_to_base64(bytes_input):
-	"""Base64 encodes some bytes"""
-	return base64.b64encode(convert_to_raw_bytes(bytes_input))
+	"""Base64 encodes some bytes."""
+	return base64.b64encode(bytes_input)
 
 
 class TestStringConversions(unittest.TestCase):
