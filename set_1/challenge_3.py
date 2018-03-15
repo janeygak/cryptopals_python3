@@ -49,7 +49,7 @@ def test_possible_keys(ciphertext):
 		if score > 80:
 			top_keys.append(chr(num))
 
-	print("Most likely keys: ", top_keys)
+	return top_keys
 
 
 test_possible_keys(ciphertext)
